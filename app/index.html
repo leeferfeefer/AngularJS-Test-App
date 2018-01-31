@@ -1,18 +1,40 @@
 <html ng-app="myApp">
 <head>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="app.js"></script>
-  <script src="controllers/mainController.js"></script>
+
 </head>
 
 <body>
 
 
   <div ng-controller="MainController">
-    {{ title }}
+    <div>
+      {{ title }}
+    </div>
+    <br>
+    Weather:
+    <div>
+      {{ forecast.city_name }}, {{ forecast.country }}
+      <br>
+      <div ng-repeat="day in forecast.days">
+
+        high: {{ day.high }}, low: {{ day.low }}
+      </div>
+      <!-- {{ forecast }} -->
+    </div>
   </div>
 
 
 </body>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Controllers -->
+  <script src="controllers/mainController.js"></script>
+
+  <!-- services -->
+  <script src="services/forecast.js"></script>
+
+
+
 
 </html>
