@@ -15,9 +15,14 @@
     <div>
       {{ forecast.city_name }}, {{ forecast.country }}
       <br>
+      <br>
       <div ng-repeat="day in forecast.days">
-
-        high: {{ day.high }}, low: {{ day.low }}
+        <h4>
+          date: {{ day.datetime | date }}
+        </h4>
+        <h5>
+          high: {{ day.high }}, low: {{ day.low }}
+        </h5>
       </div>
       <!-- {{ forecast }} -->
     </div>
